@@ -1,0 +1,1 @@
+Stat = Ember.Application.create();
