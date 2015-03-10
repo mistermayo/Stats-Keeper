@@ -1,0 +1,24 @@
+<h4>name: {{name}}</h4>
+
+<div class="col-md-6">
+  <h2>shotAttempts from this Player</h2>
+  <div>
+    <br />
+
+    <button classNames="btn btn-warning" {{action 'delete'}}>Delete Player</button>
+
+    {{#link-to 'team' team classNames="btn btn-warning"}}Close Player Info{{/link-to}}
+    
+  </div>
+
+  {{#each shotAttempt in players playerController="player"}}
+    <p>
+      {{#link-to 'shotAttempt' shotAttempt}}
+      shots: {{shotAttempt.shots}}
+      {{/link-to}}
+    </p>
+
+    {{/each}}
+    <p>{{#link-to 'new-shot' this class="btn btn-success"}}Take a shot!{{/link-to}}</p>
+
+</div>

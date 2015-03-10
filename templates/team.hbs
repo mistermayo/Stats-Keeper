@@ -1,0 +1,48 @@
+<h1>{{name}}</h1>
+
+{{#if isEditing}}
+<div class="form-div">
+  <form>
+    <div class="form-control">
+      <label class for="name">Team Name</label>
+      {{input value=name id="name" class="form-control"}}
+    </div>
+  </form>
+</div>
+<div class="button-div">
+  <button class="btn btn-success" {{action 'save'}}>Save</button>
+</div>
+
+{{else}}
+
+<p>{{name}}</p>
+
+<button class="btn btn-primary" {{action 'edit'}}>Edit</button>
+<button class="btn btn-sm btn-danger" {{action 'delete'}}>Delete Folder</button>
+
+{{/if}}
+
+<div>
+  <br />
+  {{#link-to 'teams' classNames="btn btn-warning"}}See list of Teams{{/link-to}}
+</div>
+
+
+<div class="col-md-4">
+  <h2>players in this team</h2>
+  {{#each player in players playerController="player"}}
+  <p>
+    {{#link-to 'player' player}}
+    name: {{player.name}}{{/link-to}}
+  </p>
+
+  {{/each}}
+
+  <p>{{#link-to 'new-player' this class="btn btn-success"}}Create New Player{{/link-to}}</p>
+</div>
+
+<div class="col-md-8">
+
+  {{outlet}}
+
+</div>
