@@ -16,9 +16,26 @@
     <script src="store.js"></script>
     <script src="router.js"></script>
 
+    <script src="controllers/player.js"></script>
+    <script src="controllers/new-player.js"></script>
+    <script src="controllers/new-team.js"></script>
+    <script src="controllers/new-shotAttempt.js"></script>
+    <script src="controllers/shotAttempt.js"></script>
+    <script src="controllers/team.js"></script>
+
+
+    <script src="routes/teams.js"></script>
+    <script src="routes/team.js"></script>
+    <script src="routes/new-player.js"></script>
+    <script src="routes/player.js"></script>
+
+    <script src="models/team.js"></script>
+    <script src="models/shotAttempt.js"></script>
+    <script src="models/player.js"></script>
+
     <script>
     EmberHandlebarsLoader.loadTemplates
-    ([  ]);
+    ([ 'application', 'new-shotAttempt', 'player', 'new-player', 'team', 'teams', 'new-team' ]);
     </script>
 
   </head>

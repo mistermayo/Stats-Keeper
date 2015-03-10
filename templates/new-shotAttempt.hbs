@@ -1,0 +1,18 @@
+<h2>New Shot</h2>
+
+<form>
+  <div class="form-group">
+    <label for="shot">Shot number:</label>
+    {{input value=shot id="shot" class="form-control" rows="1"}}
+  </div>
+  <div class="form-group">
+    <label for="score">Score:</label>
+    {{input value=score id="score" class="form-control"}}
+  </div>
+  <button class="btn btn-primary" {{action "save"}}>Add your Shot Here</button>
+</form>
+{{outlet}}
+<div>
+  <br />
+  {{#link-to 'player' classNames="btn btn-warning"}}Go back to Player{{/link-to}}
+</div>

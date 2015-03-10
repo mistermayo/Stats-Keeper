@@ -1,4 +1,4 @@
-Stat.ShotController = Ember.ObjectController.extend({
+Stat.ShotAttemptController = Ember.ObjectController.extend({
   actions: {
     delete: function() {
       if (confirm('Are you sure?')) {

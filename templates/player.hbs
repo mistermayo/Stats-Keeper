@@ -8,17 +8,25 @@
     <button classNames="btn btn-warning" {{action 'delete'}}>Delete Player</button>
 
     {{#link-to 'team' team classNames="btn btn-warning"}}Close Player Info{{/link-to}}
-    
+
   </div>
+  <div class="row">
+    <div class='col-md-12'>
+    {{#each shotAttempt in shotAttempts shotAttemptController="shotAttempt"}}
+      <div class="shot well row">
 
-  {{#each shotAttempt in players playerController="player"}}
-    <p>
-      {{#link-to 'shotAttempt' shotAttempt}}
-      shots: {{shotAttempt.shots}}
-      {{/link-to}}
-    </p>
-
+        <div class='col-md-9'>
+          <p>
+            <span class="shot-info">score: {{shotAttempt.score}}</span><br>
+          </p>
+          <p>
+            <span class="shot-info">shot: {{shotAttempt.shot}}</span><br>
+          </p>
+        </div>
+      </div>
     {{/each}}
-    <p>{{#link-to 'new-shot' this class="btn btn-success"}}Take a shot!{{/link-to}}</p>
+  </div>
+</div>
+    <p>{{#link-to 'new-shotAttempt' this class="btn btn-success"}}Take a shot!{{/link-to}}</p>
 
 </div>
